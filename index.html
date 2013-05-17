@@ -4,18 +4,163 @@ Project: ASD1305
 Date:130511 -->
 
 <html>
+<head>
+<title></title>
+<link rel="stylesheet" href="libs/jquery.mobile-1.3.1.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="libs/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="libs/jquery.mobile-1.3.1.min.js" type="text/javascript"></script>
+</head>
 
-	<head>
-
-		<title></title>
-
-		<link rel="stylesheet" href="css/style.css">
-
-	</head>
-
-	<body>
-
-		<script src="js/main.js"></script>
-	</body>
-
+<body>
+<div id="main" data-role="page" data-theme="d">
+  <div data-role="header" data-position="fixed">
+    <h1>Session Sheet</h1>
+  </div>
+  <div data-role="content">
+    <ul data-role="listview" data-split-icon="custom">
+      <li><a href="#health" data-rel="popup" data-position-to="window" data-transition="pop">HP:</a><a href="#">Default</a>
+      	 <div data-role="popup" id="health">
+            <h1>HP: Dynamic HP</h1>
+            <form action="#" method="post" id="healthform">
+                <div data-role="fieldcontain">
+                  <input name="textinput" type="number" id="healthinput" value="xxx"/>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                      <input type="radio" id="hptype_dmg" value="" />
+                      <label for="hptype_0">Damage</label>
+                      <input type="radio" id="hptype_heal" value="" />
+                      <label for="hptype_1">Heal</label>
+                      <input type="radio" id="hptype_temp" value="" />
+                      <label for="hptype_2">Add Temp</label>
+                    </fieldset>
+                </div>
+                <button type="submit">Save</button>
+                <button type="reset">Reset</button>
+            </form>
+        </div>
+	  </li>
+      <li><a href="#">AC:</a><a href="#">Default</a></li>
+      <li><a href="#">Attack:</a><a href="#">Default</a></li>
+      <li><a href="#">Damage:</a><a href="#">Default</a></li>
+      <li><a href="#">Fort:</a><a href="#">Default</a></li>
+      <li><a href="#">Reflex:</a><a href="#">Default</a></li>
+      <li><a href="#">Will:</a><a href="#">Default</a></li>
+    </ul>
+    Content</div>
+  <div data-role="footer" data-id="nav" data-position="fixed" data-visible-on-page-show="true" data-tap-toggle="false">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#char" data-transition="slide" data-direction="reverse">Character</a></li>
+        <li><a href="#main" class="ui-btn-active">Main</a></li>
+        <li><a href="#mods" data-transition="slide">Modifiers</a></li>
+      </ul>
+    </div>
+    <!-- /navbar --> 
+  </div>
+  <!-- /footer -->
+</div>
+</div><!-- End Main Page -->
+<div data-role="page" id="mods">
+  <div data-role="header" data-position="fixed">
+    <h1>Modifiers</h1>
+  </div>
+  <div data-role="content">Content</div>
+  <div data-role="footer" data-id="nav" data-position="fixed" data-visible-on-page-show="true" data-tap-toggle="false">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#char" data-transition="slide" data-direction="reverse">Character</a></li>
+        <li><a href="#main" data-transition="slide" data-direction="reverse">Main</a></li>
+        <li><a href="#mods">Modifiers</a></li>
+      </ul>
+    </div>
+    <!-- /navbar --> 
+  </div>
+  <!-- /footer --> 
+</div>
+<!--End Mods Page-->
+<div data-role="page" id="char">
+  <div data-role="header" data-position="fixed">
+    <h1>Character</h1>
+  </div>
+  <div data-role="content">
+  	<form action="#" method="post" id="charform">
+    <div data-role="fieldcontain">
+      <label for="charname">Name:</label>
+      <input type="text" name="nameinput" id="charname"  />
+    </div>
+    <div class="ui-grid-a">
+      <div class="ui-block-a"><!--Block 1,1-->
+        <div data-role="fieldcontain">
+          <label for="charhp">HP:</label>
+          <input type="number" id="charhp" value=""  />
+        </div>
+      </div>
+      <div class="ui-block-b"><!--Block 1,2-->
+      	<div data-role="fieldcontain">
+          <label for="charwill">Will:</label>
+          <input type="number" id="charwill" value=""  />
+        </div>
+      </div>
+      <div class="ui-block-a"><!--Block 2,1-->
+      	<div data-role="fieldcontain">
+          <label for="charac">AC:</label>
+          <input type="number" id="charac" value=""  />
+        </div>
+      </div>
+      <div class="ui-block-b"><!--Block 2,2-->
+      	<div data-role="fieldcontain">
+          <label for="charatk">Attack:</label>
+          <input type="number" id="charatk" value=""  />
+        </div>
+      </div>
+      <div class="ui-block-a"><!--Block 3,1-->
+      	<div data-role="fieldcontain">
+          <label for="charfort">Fort:</label>
+          <input type="number" id="charfort" value=""  />
+        </div>
+      </div>
+      <div class="ui-block-b"><!--Block 3,2-->
+      	<div data-role="fieldcontain">
+          <label for="chardmg">Damage:</label>
+          <input type="number" id="chardmg" value=""  />
+        </div>
+      </div>
+      <div class="ui-block-a"><!--Block 4,1-->
+      	<div data-role="fieldcontain">
+          <label for="charref">Reflex:</label>
+          <input type="number" id="charref" value=""  />
+        </div>
+      </div>
+      <div class="ui-block-b"><!--Block 4,2-->
+      	<div data-role="fieldcontain">
+          <label for="charatknum"># of Atks:</label>
+          <input type="number" id="charatknum" value=""  />
+        </div>
+      </div>
+      <div class="ui-block-a"><!--Block 5,1-->
+      	<button type="submit">Save</button>
+      </div>
+      <div class="ui-block-b"><!--Block 5,2-->
+        <button type="reset">Clear</button>
+      </div>
+    </div>
+  	</form>	
+  </div>
+  <div data-role="footer" data-id="nav" data-position="fixed" data-visible-on-page-show="true" data-tap-toggle="false">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#char" class="ui-btn-active">Character</a></li>
+        <li><a href="#main" data-transition="slide">Main</a></li>
+        <li><a href="#mods" data-transition="slide">Modifiers</a></li>
+      </ul>
+    </div>
+    <!-- /navbar --> 
+  </div>
+  <!-- /footer --> 
+</div>
+<!--End Mods Page-->
+<script src="js/main.js"></script>
+</body>
 </html>
